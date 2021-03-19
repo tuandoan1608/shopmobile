@@ -12,7 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::prefix('admin')->group(function () {
+    Route::get('/','homeController@index')->name('home');
+    route::get('login','loginController@index')->name('login');
+    route::post('ad','loginController@log')->name('ad');
+    route::get('register','loginController@register')->name('register');
 
-Route::get('/', function () {
-    return view('welcome');
+    //router accessori
+   route::prefix('phu-kien')->group(function(){
+    route::get('danh-sach','accessoriesController@index');
+   });
 });

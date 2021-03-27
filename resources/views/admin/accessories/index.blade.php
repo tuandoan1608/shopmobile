@@ -1,249 +1,92 @@
 @extends('admin.master')
-@section('header')
-    @include('admin.common.cssViewList')
-@endsection
+
 @section('content')
-    <div class="col-md-12 col-sm-12 col-xs-12">
+
+    <div class="content-wrapper">
+      <div class="col-md-12 col-sm-12 col-xs-12">
         @include('flash::message')
     </div>
-    <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="x_panel">
-            <div class="x_title">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="col-md-6 col-sm-6 col-xs-6"><h2>Phụ kiện</h2></div>
-                    <div class="col-md-6 col-sm-6 col-xs-6"><a class="btn btn-primary"
-                                                               href="#"
-                                                               name="themmoi"
-                                                               style="float: right;"><span
-                                    class="glyphicon glyphicon-plus"
-                                    aria-hidden="true" style="color: white ; padding-right: 2px "></span>Thêm mới</a>
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>DataTables</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">DataTables</li>
+                        </ol>
                     </div>
                 </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="x_content">
-                <table id="datatable-responsive"
-                       class="table table-striped table-bordered dt-responsive nowrap bulk_action"
-                       cellspacing="0" width="100%">
-                    <thead>
-                    <tr class="headings">
-                        <th>
-                            <input type="checkbox" id="check-all" class="flat">
-                        </th>
-                        <th>Accessory Name</th>
-                        <th>Price</th>
-                        <th>idUnitPrice</th>
-                        <th>iStatus</th>
-                        <th>Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-              
-                        <tr>
-                            <td class="a-center ">
-                                <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td>name</td>
-                            <td>gias</td>
-                            <td>giam gia</td>
-                            <td>trang thai</td>
-                            <td>
-                                <button type="button" class="btn btn-info">Xem</button>
-                                <button type="button" class="btn btn-success">Cập nhật</button>
-                                <button type="button" class="btn btn-danger">Xóa</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="a-center ">
-                                <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td>name</td>
-                            <td>gias</td>
-                            <td>giam gia</td>
-                            <td>trang thai</td>
-                            <td>
-                                <button type="button" class="btn btn-info">Xem</button>
-                                <button type="button" class="btn btn-success">Cập nhật</button>
-                                <button type="button" class="btn btn-danger">Xóa</button>
-                            </td>
-                        </tr>  <tr>
-                            <td class="a-center ">
-                                <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td>name</td>
-                            <td>gias</td>
-                            <td>giam gia</td>
-                            <td>trang thai</td>
-                            <td>
-                                <button type="button" class="btn btn-info">Xem</button>
-                                <button type="button" class="btn btn-success">Cập nhật</button>
-                                <button type="button" class="btn btn-danger">Xóa</button>
-                            </td>
-                        </tr>  <tr>
-                            <td class="a-center ">
-                                <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td>name</td>
-                            <td>gias</td>
-                            <td>giam gia</td>
-                            <td>trang thai</td>
-                            <td>
-                                <button type="button" class="btn btn-info">Xem</button>
-                                <button type="button" class="btn btn-success">Cập nhật</button>
-                                <button type="button" class="btn btn-danger">Xóa</button>
-                            </td>
-                        </tr>  <tr>
-                            <td class="a-center ">
-                                <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td>name</td>
-                            <td>gias</td>
-                            <td>giam gia</td>
-                            <td>trang thai</td>
-                            <td>
-                                <button type="button" class="btn btn-info">Xem</button>
-                                <button type="button" class="btn btn-success">Cập nhật</button>
-                                <button type="button" class="btn btn-danger">Xóa</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="a-center ">
-                                <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td>name</td>
-                            <td>gias</td>
-                            <td>giam gia</td>
-                            <td>trang thai</td>
-                            <td>
-                                <button type="button" class="btn btn-info">Xem</button>
-                                <button type="button" class="btn btn-success">Cập nhật</button>
-                                <button type="button" class="btn btn-danger">Xóa</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="a-center ">
-                                <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td>name</td>
-                            <td>gias</td>
-                            <td>giam gia</td>
-                            <td>trang thai</td>
-                            <td>
-                                <button type="button" class="btn btn-info">Xem</button>
-                                <button type="button" class="btn btn-success">Cập nhật</button>
-                                <button type="button" class="btn btn-danger">Xóa</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="a-center ">
-                                <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td>name</td>
-                            <td>gias</td>
-                            <td>giam gia</td>
-                            <td>trang thai</td>
-                            <td>
-                                <button type="button" class="btn btn-info">Xem</button>
-                                <button type="button" class="btn btn-success">Cập nhật</button>
-                                <button type="button" class="btn btn-danger">Xóa</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="a-center ">
-                                <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td>name</td>
-                            <td>gias</td>
-                            <td>giam gia</td>
-                            <td>trang thai</td>
-                            <td>
-                                <button type="button" class="btn btn-info">Xem</button>
-                                <button type="button" class="btn btn-success">Cập nhật</button>
-                                <button type="button" class="btn btn-danger">Xóa</button>
-                            </td>
-                        </tr>
-                <tr>
-                            <td class="a-center ">
-                                <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td>name</td>
-                            <td>gias</td>
-                            <td>giam gia</td>
-                            <td>trang thai</td>
-                            <td>
-                                <button type="button" class="btn btn-info">Xem</button>
-                                <button type="button" class="btn btn-success">Cập nhật</button>
-                                <button type="button" class="btn btn-danger">Xóa</button>
-                            </td>
-                        </tr>
-                <tr>
-                            <td class="a-center ">
-                                <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td>name</td>
-                            <td>gias</td>
-                            <td>giam gia</td>
-                            <td>trang thai</td>
-                            <td>
-                                <button type="button" class="btn btn-info">Xem</button>
-                                <button type="button" class="btn btn-success">Cập nhật</button>
-                                <button type="button" class="btn btn-danger">Xóa</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="a-center ">
-                                <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td>name</td>
-                            <td>gias</td>
-                            <td>giam gia</td>
-                            <td>trang thai</td>
-                            <td>
-                                <button type="button" class="btn btn-info">Xem</button>
-                                <button type="button" class="btn btn-success">Cập nhật</button>
-                                <button type="button" class="btn btn-danger">Xóa</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="a-center ">
-                                <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td>tau</td>
-                            <td>gias</td>
-                            <td>giam gia</td>
-                            <td>trang thai</td>
-                            <td>
-                                <button type="button" class="btn btn-info">Xem</button>
-                                <button type="button" class="btn btn-success">Cập nhật</button>
-                                <button type="button" class="btn btn-danger">Xóa</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="a-center ">
-                                <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td>tau</td>
-                            <td>gias</td>
-                            <td>giam gia</td>
-                            <td>trang thai</td>
-                            <td>
-                                <button type="button" class="btn btn-info">Xem</button>
-                                <button type="button" class="btn btn-success">Cập nhật</button>
-                                <button type="button" class="btn btn-danger">Xóa</button>
-                            </td>
-                        </tr>
-              
-                   
-                    </tbody>
-                </table>
+            </div><!-- /.container-fluid -->
+        </section>
 
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">DataTable with default features</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table id="example1" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Rendering engine</th>
+                                            <th>Browser</th>
+                                            <th>Platform(s)</th>
+                                            <th>Engine version</th>
+                                            <th>CSS grade</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Trident</td>
+                                            <td>Internet
+                                                Explorer 4.0
+                                            </td>
+                                            <td>Win 95+</td>
+                                            <td> 4</td>
+                                            <td>X</td>
+                                        </tr>
+
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
             </div>
-        </div>
+            <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
     </div>
 @endsection
 @section('script')
-    @include('admin.common.jsViewList')
+
     <script>
+        $(function() {
+          $("#example1").DataTable({
+                "responsive": true,
+                "pageLength": 25,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+        });
         $('div.alert').delay(3000).slideUp();
+
     </script>
+
 @endsection

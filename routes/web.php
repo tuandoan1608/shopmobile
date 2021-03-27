@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\categoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,11 +16,28 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('admin')->group(function () {
     Route::get('/','homeController@index')->name('home');
     route::get('login','loginController@index')->name('login');
-    route::post('ad','loginController@log')->name('ad');
+    route::get('/auth/logout','loginController@getLogout');
+    route::post('logins','loginController@login')->name('addlogin');
     route::get('register','loginController@register')->name('register');
 
     //router accessori
    route::prefix('phu-kien')->group(function(){
     route::get('danh-sach','accessoriesController@index');
+   });
+   route::prefix('dashboard')->group(function(){
+    route::get('danh-sach','dashboardController@index')->name('dashboard');
+   });
+   route::prefix('attribute')->group(function(){
+    route::get('danh-sach','attributeController@index')->name('astributeindex');
+    Route::get('add', 'attributeController@create')->name('astributeadd');
+    Route::post('add', 'attributeController@store')->name('astributestore');
+   });
+   route::prefix('category')->group(function(){
+    Route::get('danh-sach', 'categoryController@index')->name('categoryindex');
+    Route::get('add', 'categoryController@create')->name('categoryadd');
+    Route::post('add', 'categoryController@store')->name('categorystore');
+    Route::get('edit/{id}', 'categoryController@show')->name('categoryshow');
+    Route::post('edit/{id}', 'categoryController@update')->name('categoryupdate');
+    Route::get('delete/{id}', 'categoryController@destroy')->name('categorydelete');
    });
 });

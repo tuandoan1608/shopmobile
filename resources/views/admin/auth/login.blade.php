@@ -1,54 +1,63 @@
 @extends('admin.auth.authmester')
 @section('content')
-    <div class="">
-        <div id="wrapper">
-            <div id="login" class=" form">
-                <section class="login_content">
-                    <form action="{{url('/admin/login')}}" method="post">
-                        {!! csrf_field() !!}
-                        <h1>Quản trị website</h1>
-                        <div id="errors">
-                            @include('flash::message')
-                        </div>
-                        <div>
-                            <input type="text" class="form-control" placeholder="Tên đăng nhập" autofocus
-                                   name="username" id="username" required value="{!! old('username') !!}"/>
-                            @if ($errors->has('username'))
-                                <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                            @endif
-                        </div>
-                        <div>
-                            <input type="password" class="form-control" placeholder="Mật khẩu"
-                                   name="password" id="password" required/>
-                                   
-                            @if ($errors->has('password'))
-                                <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                            @endif
-                        </div>
-                        <div>
-                            <p>
-                                <label><input type="checkbox" id="remember" name="remember"> Ghi nhớ tài khoản
-                                    của tôi.</label>
-                            </p>
-                        </div>
-                        <hr>
-                        <div>
-                            <p>
-                                <button class="btn btn-default submit" type="submit">Đăng nhập</button>
-                                <a class="reset_pass" href="#">Quên mật khẩu?</a>
-                            </p>
-                            <p class="change_link">Bạn chưa có tài khoản ?
-                                <a href="{{url('/admin/register')}}" class="to_register"> Đăng ký </a>
-                            </p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </form>
-                </section>
-            </div>
-        </div>
+<div class="login-box">
+    <div class="login-logo">
+      <a href="../../index2.html"><b>Admin</b>LTE</a>
     </div>
+    <!-- /.login-logo -->
+    <div class="card">
+      <div class="card-body login-card-body">
+        <p class="login-box-msg">Sign in to start your session</p>
+  
+        <form action="/admin/logins" method="post">
+            @csrf
+            <div id="errors">
+                @include('flash::message')
+            </div>
+          <div class="input-group mb-3">
+            <input type="email" name="email" class="form-control" placeholder="Email">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="password" name="password" class="form-control" placeholder="Password">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8">
+              <div class="icheck-primary">
+                <input type="checkbox" id="remember">
+                <label for="remember">
+                  Remember Me
+                </label>
+              </div>
+            </div>
+            <!-- /.col -->
+            <div class="col-4">
+              <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            </div>
+            <!-- /.col -->
+          </div>
+        </form>
+  
+       
+        <!-- /.social-auth-links -->
+  
+        <p class="mb-1">
+          <a href="forgot-password.html">I forgot my password</a>
+        </p>
+       
+      </div>
+      <!-- /.login-card-body -->
+    </div>
+  </div>
+
+  
 @endsection

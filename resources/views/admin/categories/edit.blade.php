@@ -22,22 +22,16 @@
                  
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <form accept-charset="utf-8" action="{{ route('categoryupdate',['id'=>$data->id]) }}" method="post">
+                        <form accept-charset="utf-8" action="/admin/category/{{$data->id}}" method="post">
                             {!! csrf_field() !!}
+                            @method('put')
                             <fieldset>
                                 <div class="form-group">
                                     <label for="disabledTextInput">Tên danh mục</label>
                                     <input type="text" name="name" class="form-control"
                                         value="{{$data->name}}" required>
                                 </div>
-                                <div class="form-group">
-                                    <label for="disabledSelect">Danh mục</label>
-                                    <select class="form-control" name="parentID">
-                                        <option value="0">Danh mục cha</option>
-                                        {!!$category!!}
-
-                                    </select>
-                                </div>
+                               
 
                                 <div class="form-group">
                                     <label>Status:</label>

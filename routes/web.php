@@ -32,12 +32,7 @@ Route::prefix('admin')->group(function () {
     Route::get('add', 'attributeController@create')->name('astributeadd');
     Route::post('add', 'attributeController@store')->name('astributestore');
    });
-   route::prefix('category')->group(function(){
-    Route::get('danh-sach', 'categoryController@index')->name('categoryindex');
-    Route::get('add', 'categoryController@create')->name('categoryadd');
-    Route::post('add', 'categoryController@store')->name('categorystore');
-    Route::get('edit/{id}', 'categoryController@show')->name('categoryshow');
-    Route::post('edit/{id}', 'categoryController@update')->name('categoryupdate');
-    Route::get('delete/{id}', 'categoryController@destroy')->name('categorydelete');
-   });
+  
+   Route::resource('category', 'categoryController');
+   Route::resource('producttype', 'producttypeController');
 });

@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>AdminLTE 3 | Dashboard</title>
 
   <!-- Google Font: Source Sans Pro -->
@@ -19,6 +20,7 @@
   <link rel="stylesheet" href="/theme/admin/plugins/jqvmap/jqvmap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="/theme/admin/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="/theme/admin/dist/css/style.css">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="/theme/admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Daterange picker -->
@@ -39,9 +41,9 @@
 <div class="wrapper">
 
   <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
+  {{-- <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__shake" src="/theme/admin/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-  </div>
+  </div> --}}
 
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -122,7 +124,10 @@
           <img src="/theme/admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">{!!Auth::user()->name!!}</a>
+          <a href="#" class="d-block">
+            @if (Auth::check())
+            {!!Auth::user()->name!!}
+          @endif</a>
         </div>
       </div>
 
@@ -173,9 +178,15 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/admin/category/danh-sach" class="nav-link">
+                <a href="{{route('category.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh mục sản phẩm</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('producttype.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Loại sản phẩm</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -344,7 +355,7 @@
 <script src="/theme/admin/dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="/theme/admin/dist/js/pages/dashboard.js"></script>
-
+<script src="/theme/admin/dist/js/ajax.js"></script>
 
 <script src="/theme/admin/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="/theme/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>

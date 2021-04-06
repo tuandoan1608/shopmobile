@@ -40,3 +40,10 @@ Route::prefix('admin')->group(function () {
    Route::resource('producttype', 'producttypeController');
    Route::resource('product', 'productController');
 });
+route::get('/',function(){
+    return view('client.productdetail.index');
+});
+route::get('/product',function(){
+    return view('client.productcatorgori.index');
+});
+

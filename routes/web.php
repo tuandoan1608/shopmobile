@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
 Route::prefix('admin')->group(function () {
     Route::get('/','homeController@index')->name('home');
     route::get('login','loginController@index')->name('login');
@@ -35,4 +38,5 @@ Route::prefix('admin')->group(function () {
   
    Route::resource('category', 'categoryController');
    Route::resource('producttype', 'producttypeController');
+   Route::resource('product', 'productController');
 });

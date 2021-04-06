@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use App\Component\recusive;
+
 use App\Http\Requests\StorecategoryRequest;
 use App\producttype;
 use Laracasts\Flash\Flash;
@@ -54,12 +54,9 @@ class categoryController extends Controller
     public function store(Request $request)
     {
         $data=$request->all();
-        
         $data['slug']=Str::slug($request->name);
-
-      $this->category->create($data);
-      
-      Flash::success('Thêm danh mục thành công.');
+        $this->category->create($data);
+        Flash::success('Thêm danh mục thành công.');
       
         return redirect()->route('category.index');
     }
@@ -73,10 +70,7 @@ class categoryController extends Controller
     public function show($id)
     {
    
- 
-     
-      $category=$this->getcate($data->parentID);
-        return view('admin.categories.edit',compact('data','category'));
+        return view('admin.categories.edit');
     }
 
     /**
@@ -88,10 +82,7 @@ class categoryController extends Controller
     public function edit($id)
     {
         $data=  $this->category->find($id);
-     
-     
-     
-          return response()->json($data,'200');
+        return response()->json($data,'200');
     }
 
     /**

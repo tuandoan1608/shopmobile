@@ -4,12 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>Trang quản trị</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="/theme/admin/plugins/fontawesome-free/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bootstrap 4 -->
@@ -35,6 +36,8 @@
     <link rel="stylesheet" href="/theme/admin/plugins/sweetalert2/sweetalert2.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/theme/admin/dist/css/adminlte.min.css">
+ 
+
     @yield('css')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -113,7 +116,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="/theme/admin/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">TRANG QUẢN TRỊ</span>
     </a>
 
     <!-- Sidebar -->
@@ -196,7 +199,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                <a href="{{route('product.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách sản phẩm</p>
                 </a>
@@ -370,6 +373,7 @@
 <script src="/theme/admin/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="/theme/admin/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <script src="/theme/admin/plugins/sweetalert2/sweetalert2.js"></script>
+
 @yield('script')
 </body>
 </html>

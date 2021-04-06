@@ -10,6 +10,11 @@ use Laracasts\Flash\Flash;
 use Illuminate\support\Str;
 class producttypeController extends Controller
 {
+    private $producttype;
+    public function __construct(producttype $producttype)
+    {
+       $this->producttype=$producttype;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +22,8 @@ class producttypeController extends Controller
      */
     public function index()
     {
-        $producttype=producttype::paginate(10);
+        $producttype= $this->producttype->paginate(10);
+        
        return view('admin.productTypes.list',compact('producttype'));
     }
 
@@ -28,7 +34,9 @@ class producttypeController extends Controller
      */
     public function create()
     {
+
         $category=category::where('status',1)->get();
+       
         return view('admin.productTypes.add',compact('category'));
     }
 

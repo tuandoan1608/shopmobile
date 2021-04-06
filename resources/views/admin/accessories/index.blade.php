@@ -3,9 +3,9 @@
 @section('content')
 
     <div class="content-wrapper">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        @include('flash::message')
-    </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            @include('flash::message')
+        </div>
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <div class="container-fluid">
@@ -76,7 +76,7 @@
 
     <script>
         $(function() {
-          $("#example1").DataTable({
+            $("#example1").DataTable({
                 "responsive": true,
                 "pageLength": 25,
                 "lengthChange": false,

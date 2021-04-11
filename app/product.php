@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
-
+use Faker\Generator as Faker;
 class product extends Model
 {
     use Notifiable;
@@ -16,4 +16,6 @@ class product extends Model
     public function producttype(){
     	return $this->belongsTo('App\producttype','producttype_id','id');
     }
+    
+
 }

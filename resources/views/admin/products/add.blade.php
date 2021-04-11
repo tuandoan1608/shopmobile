@@ -74,9 +74,9 @@
                                                         style="width:200px" name="category_id">
 
 
-                                                       @foreach ($category as $item )
-                                                       <option value="{{$item->id}}">{{$item->name}}</option>
-                                                       @endforeach
+                                                        @foreach ($category as $item)
+                                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                                 <div class="form-group row">
@@ -84,9 +84,9 @@
                                                     <select class="js-example-basic-multiple form-control col-sm-9"
                                                         style="width:200px" name="producttype_id">
 
-                                                      
-                                                        @foreach ($protype as $item )
-                                                        <option value="{{$item->id}}">{{$item->name}}</option>
+
+                                                        @foreach ($protype as $item)
+                                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -122,14 +122,14 @@
                                         </div>
                                         <div class="card-body">
                                             <div class="form-group row">
-                                                <label class="col-sm-4 col-form-label" for="inputEstimatedBudget">Thương hiệu:</label>
-
-                                                <select
-                                                    class="js-example-placeholder-single js-states form-control col-sm-8" name="band">
+                                                <label class="col-sm-4 col-form-label" for="inputEstimatedBudget">Thương
+                                                    hiệu:</label>
+                                                    <select
+                                                    class="js-example-placeholder-single js-states form-control col-sm-8"
+                                                    name="band">
                                                     <option selected="selected"></option>
-                                                    
-                                                    @foreach ($speci as $item )
-                                                    <option >{{$item->Band}}</option>
+                                                    @foreach ($speci as $item)
+                                                        <option>{{ $item->Band }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -138,21 +138,23 @@
                                                     hình:</label>
 
                                                 <select
-                                                    class="js-example-placeholder-single js-states form-control col-sm-8" name="display">
+                                                    class="js-example-placeholder-single js-states form-control col-sm-8"
+                                                    name="display">
                                                     <option selected="selected"></option>
-                                                    @foreach ($speci as $item )
-                                                    <option >{{$item->Band}}</option>
+                                                    @foreach ($speci as $item)
+                                                        <option>{{ $item->Band }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-4  col-form-label" for="inputSpentBudget" >Hệ điều
+                                                <label class="col-sm-4  col-form-label" for="inputSpentBudget">Hệ điều
                                                     hành:</label>
                                                 <select
-                                                    class="js-example-placeholder-single js-states form-control col-sm-8" name="operating">
+                                                    class="js-example-placeholder-single js-states form-control col-sm-8"
+                                                    name="operating">
                                                     <option selected="selected"></option>
-                                                    @foreach ($speci as $item )
-                                                    <option >{{$item->Band}}</option>
+                                                    @foreach ($speci as $item)
+                                                        <option>{{ $item->Band }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -160,10 +162,11 @@
                                                 <label class="col-sm-4 col-form-label" for="inputEstimatedDuration">Camera
                                                     sau:</label>
                                                 <select
-                                                    class="js-example-placeholder-single js-states form-control col-sm-8" name="camera_rear">
+                                                    class="js-example-placeholder-single js-states form-control col-sm-8"
+                                                    name="camera_rear">
                                                     <option selected="selected"></option>
-                                                    @foreach ($speci as $item )
-                                                    <option >{{$item->Band}}</option>
+                                                    @foreach ($speci as $item)
+                                                        <option>{{ $item->Band }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -171,10 +174,11 @@
                                                 <label class="col-sm-4 col-form-label" for="inputSpentBudget">Camera
                                                     trước:</label>
                                                 <select
-                                                    class="js-example-placeholder-single js-states form-control col-sm-8" name="camera_front">
+                                                    class="js-example-placeholder-single js-states form-control col-sm-8"
+                                                    name="camera_front">
                                                     <option selected="selected"></option>
-                                                    @foreach ($speci as $item )
-                                                    <option >{{$item->Band}}</option>
+                                                    @foreach ($speci as $item)
+                                                        <option>{{ $item->Band }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -182,20 +186,22 @@
                                                 <label class="col-sm-4 col-form-label"
                                                     for="inputEstimatedDuration">Chip:</label>
                                                 <select
-                                                    class="js-example-placeholder-single js-states form-control col-sm-8" name="chip">
+                                                    class="js-example-placeholder-single js-states form-control col-sm-8"
+                                                    name="chip">
                                                     <option selected="selected"></option>
-                                                    @foreach ($speci as $item )
-                                                    <option >{{$item->Band}}</option>
+                                                    @foreach ($speci as $item)
+                                                        <option>{{ $item->Band }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-sm-4 col-form-label" for="inputSpentBudget">RAM:</label>
                                                 <select
-                                                    class="js-example-placeholder-single js-states form-control col-sm-8" name="ram">
+                                                    class="js-example-placeholder-single js-states form-control col-sm-8"
+                                                    name="ram">
                                                     <option selected="selected"></option>
-                                                    @foreach ($speci as $item )
-                                                    <option >{{$item->Band}}</option>
+                                                    @foreach ($speci as $item)
+                                                        <option>{{ $item->Band }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -204,20 +210,22 @@
                                                     nhớ
                                                     trong:</label>
                                                 <select
-                                                    class="js-example-placeholder-single js-states form-control col-sm-8" name="memory">
+                                                    class="js-example-placeholder-single js-states form-control col-sm-8"
+                                                    name="memory">
                                                     <option selected="selected"></option>
-                                                    @foreach ($speci as $item )
-                                                    <option >{{$item->Band}}</option>
+                                                    @foreach ($speci as $item)
+                                                        <option>{{ $item->Band }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-sm-4 col-form-label" for="inputSpentBudget">SIM:</label>
                                                 <select
-                                                    class="js-example-placeholder-single js-states form-control col-sm-8" name="sim">
+                                                    class="js-example-placeholder-single js-states form-control col-sm-8"
+                                                    name="sim">
                                                     <option selected="selected"></option>
-                                                    @foreach ($speci as $item )
-                                                    <option >{{$item->Band}}</option>
+                                                    @foreach ($speci as $item)
+                                                        <option>{{ $item->Band }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -225,10 +233,11 @@
                                                 <label class="col-sm-4 col-form-label"
                                                     for="inputEstimatedDuration">Pin:</label>
                                                 <select
-                                                    class="js-example-placeholder-single js-states form-control col-sm-8" name="battery">
+                                                    class="js-example-placeholder-single js-states form-control col-sm-8"
+                                                    name="battery">
                                                     <option selected="selected"></option>
-                                                    @foreach ($speci as $item )
-                                                    <option >{{$item->Band}}</option>
+                                                    @foreach ($speci as $item)
+                                                        <option>{{ $item->Band }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -237,20 +246,23 @@
                                                     mật
                                                     nâng cao:</label>
                                                 <select
-                                                    class="js-example-placeholder-single js-states form-control col-sm-8" name="security">
+                                                    class="js-example-placeholder-single js-states form-control col-sm-8"
+                                                    name="security">
                                                     <option selected="selected"></option>
-                                                    @foreach ($speci as $item )
-                                                    <option >{{$item->Band}}</option>
+                                                    @foreach ($speci as $item)
+                                                        <option>{{ $item->Band }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-4 col-form-label" for="inputEstimatedDuration">Wifi:</label>
+                                                <label class="col-sm-4 col-form-label"
+                                                    for="inputEstimatedDuration">Wifi:</label>
                                                 <select
-                                                    class="js-example-placeholder-single js-states form-control col-sm-8" name="wifi">
+                                                    class="js-example-placeholder-single js-states form-control col-sm-8"
+                                                    name="wifi">
                                                     <option selected="selected"></option>
-                                                    @foreach ($speci as $item )
-                                                    <option >{{$item->Band}}</option>
+                                                    @foreach ($speci as $item)
+                                                        <option>{{ $item->Band }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -258,10 +270,11 @@
                                                 <label class="col-sm-4 col-form-label" for="inputEstimatedDuration">Thiết
                                                     kế:</label>
                                                 <select
-                                                    class="js-example-placeholder-single js-states form-control col-sm-8" name="design">
+                                                    class="js-example-placeholder-single js-states form-control col-sm-8"
+                                                    name="design">
                                                     <option selected="selected"></option>
-                                                    @foreach ($speci as $item )
-                                                    <option >{{$item->Band}}</option>
+                                                    @foreach ($speci as $item)
+                                                        <option>{{ $item->Band }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -269,14 +282,15 @@
                                                 <label class="col-sm-4 col-form-label" for="inputEstimatedDuration">Khối
                                                     lượng:</label>
                                                 <select
-                                                    class="js-example-placeholder-single js-states form-control col-sm-8" name="mass">
+                                                    class="js-example-placeholder-single js-states form-control col-sm-8"
+                                                    name="mass">
                                                     <option selected="selected"></option>
-                                                    @foreach ($speci as $item )
-                                                    <option >{{$item->Band}}</option>
+                                                    @foreach ($speci as $item)
+                                                        <option>{{ $item->Band }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
-                                            
+
                                         </div>
                                         <!-- /.card-body -->
                                     </div>
@@ -392,9 +406,36 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
         $(".js-example-placeholder-single").select2({
-            placeholder: "Select a state",
-            allowClear: true,
+
+            placeholder: 'Select an item',
             tags:true
+            // ajax: {
+            //     url: '/admin/search/search',
+            //     dataType: 'json',
+            //     delay: 250,
+            //     processResults: function(data) {
+            //         return {
+            //             results: $.map(data, function(item) {
+                            
+            //                 return {
+            //                     text: item.name,
+            //                     id: item.id
+            //                 }
+            //             })
+            //         };
+            //     },
+            //     cache: true
+            // }
+
+
+        });
+
+    </script>
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'csrftoken': '{{ csrf_token() }}'
+            }
         });
 
     </script>

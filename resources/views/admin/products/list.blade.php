@@ -29,14 +29,15 @@
                                         <tr>
                                             <th>STT</th>
                                             <th>Tên SP</th>
-                                            <th>Số lượng</th>
+                                         
                                             <th>Giá</th>
                                             <th>Hình ảnh</th>
                                             <th>Danh mục</th>
                                             <th>Loại SP</th>
-                                            <th>Giá nhập</th>
+                                           
+                                            {{-- <th>Giá nhập</th>
                                             <th>Giá bán</th>
-                                            <th>Màu sắc</th>
+                                            <th>Màu sắc</th> --}}
                                             <th>Chĩnh sửa</th>
                                         </tr>
                                     </thead>
@@ -45,14 +46,19 @@
                                        <tr>
                                         <td>{{$key+1}}</td>
                                         <td>{{$item->name}}</td>
-                                        <td>{{$item->quantity}}</td>
+                                  
                                         <td>{{$item->price}}</td>
-                                        <td>{{$item->image}}</td>
+                                        <td><img src="{{Storage::url($item->image)}}" title="{{$item->name}}" width="200px" height="200px"></td>
                                         <td>{{$item->category->name}}</td>
                                         <td>{{$item->producttype->name}}</td>
-                                        <td>{{$item->import_price}}</td>
+                                     
+                                        {{-- <td>{{$item->import_price}}</td>
                                         <td>{{$item->export_price}}</td>
-                                        <td>{{$item->attributevalue_id}}</td>
+                                        <td>{{$item->attributevalue_id}}</td> --}}
+                                        <td>
+                                            <button class="btn btn-primary editProducttype" title="{{ "Sửa ".$item->name }}" data-toggle="modal" data-target="#edit" type="button" data-id="{{ $item->id }}"><a style="text-decoration: none;color:white;" href="/admin/product/{{$item->id}}/edit"><i class="fas fa-edit"></i></a></button>
+                                            <button class="btn btn-danger delete" title="{{ "Xóa ".$item->name }}"  type="button" data-url="/admin/producttype/{{$item->id}}"><i class="fas fa-trash-alt"></i></button>
+                                        </td>
                                     </tr>
                                        @endforeach
 

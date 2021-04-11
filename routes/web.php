@@ -30,6 +30,9 @@ Route::prefix('admin')->group(function () {
    route::prefix('dashboard')->group(function(){
     route::get('danh-sach','dashboardController@index')->name('dashboard');
    });
+   route::prefix('search')->group(function(){
+    Route::get('/search', 'productController@search');
+   });
    route::prefix('attribute')->group(function(){
     route::get('danh-sach','attributeController@index')->name('astributeindex');
     Route::get('add', 'attributeController@create')->name('astributeadd');
@@ -39,6 +42,7 @@ Route::prefix('admin')->group(function () {
    Route::resource('category', 'categoryController');
    Route::resource('producttype', 'producttypeController');
    Route::resource('product', 'productController');
+   route::get('/productattribute/delete/{id}','productController@deletes')->name('proattribute-delete');
 });
 route::get('/',function(){
     return view('client.productdetail.index');
@@ -46,4 +50,5 @@ route::get('/',function(){
 route::get('/product',function(){
     return view('client.productcatorgori.index');
 });
+
 

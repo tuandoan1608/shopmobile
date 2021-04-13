@@ -190,7 +190,7 @@ class productController extends Controller
     
         
         
-        //luu specification
+        //update specification
         $specification=new specification();
         $specification->product_id=$data->id;
         $specification->Display=$request->display;

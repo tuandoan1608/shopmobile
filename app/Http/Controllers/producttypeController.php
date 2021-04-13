@@ -69,7 +69,7 @@ class producttypeController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**

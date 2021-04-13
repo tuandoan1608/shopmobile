@@ -515,7 +515,7 @@
                 col += '<td>   <input type="file" name="images' + couter +
                     '[]" class="form-control " placeholder="Nhập số lượng" multiple></td>';
                 col +=
-                    '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
+                    '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Xóa"></td>';
                 row.append(col);
                 couter++;
                 $('table.order-list').append(row);
